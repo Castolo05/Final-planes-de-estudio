@@ -1,0 +1,776 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #003366;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.header-content {
+    flex-grow: 1;
+    text-align: center;
+}
+
+#logo, #mensaje {
+    height: 75px;
+    margin: 0;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#logo {
+    order: -1; /* Coloca el logo a la izquierda */
+}
+
+#mensaje {
+    order: 1; /* Coloca el mensaje a la derecha */
+}
+
+#logo:hover, #mensaje:hover {
+    transform: scale(1.05);
+}
+
+h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+nav {
+    background-color: #00406e;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.career-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+nav button {
+    background-color: #ffffff;
+    border: none;
+    color: #00406e;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    white-space: nowrap;
+}
+
+nav button span {
+    display: block;
+    line-height: 1.2;
+}
+
+#btn-gestion-tecnologica {
+    margin-left: 11.5%;
+}
+
+#btn-gestion-tecnologica, #btn-economia-empresarial, #btn-administracion, #btn-contador-publico, #btn-save {
+    width: 180px;
+    justify-items: center;
+    align-items: center;
+}
+
+#btn-save {
+    background-color: #57da3c;
+    color: #ffffff;
+    width: 140px;
+    position: relative;
+}
+
+nav button.active {
+    background-color: #1e90ff;
+    color: #ffffff;
+}
+
+nav button:hover {
+    background-color: #6cc4ff86;
+    color: #ffffff;
+}
+
+#btn-save:hover {
+    background-color: #a4f095;
+    color: #000000;
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.year-section, .mix-section {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px;
+}
+
+.year-title, .mix-title {
+    background-color: #00406e;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.course-grid {
+    display: flex;
+    flex-direction: column;
+}
+
+.course {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    padding: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.course:hover {
+    filter: brightness(0.85);
+}
+
+.course h2 {
+    font-size: 0.9em;
+    margin: 0;
+}
+
+.details {
+    display: none;
+    padding: 10px;
+    border-top: 1px solid #cccccc;
+    font-size: 0.8em;
+}
+
+.course.active .details {
+    display: block;
+}
+
+.correlatives, .is-correlative-for {
+    list-style-type: none;
+    padding-left: 10px;
+}
+
+.status-buttons {
+    margin-top: 5px;
+}
+
+.status-button {
+    margin: 2px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.9em;
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+
+.final-aprobado, .ingreso-aprobado {
+    background-color: #99d98c;
+    padding: 10px;
+}
+
+.sin-cursada, .sin-ingreso {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #cccccc;
+    padding: 10px;
+}
+
+.cursada-aprobada {
+    background-color: #a1c4fd;
+    padding: 10px;
+}
+
+.disabled {
+    background-color: #7a7a7a;
+    color: #ffffff;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-title {
+    margin-top: 0;
+    color: #003366;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-form input,
+.modal-form textarea {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.modal-form button {
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.modal-form button:hover {
+    background-color: #00406e;
+}
+
+body.blur > *:not(.modal) {
+    filter: blur(5px);
+    transition: filter 0.3s ease;
+}
+
+#tutorialModal {
+    align-items: center;
+}
+
+#tutorialModal.active {
+    display: flex;
+}
+
+.tutorial-content {
+    max-width: 600px;
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #fefefe;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.nav-button {
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+#prevButton {
+    left: 26%;
+}
+
+#nextButton {
+    right: 26%;
+}
+
+.nav-button:hover {
+    background-color: #00406e;
+}
+
+.nav-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+#tutorialTabs {
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.tutorial-tab {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.5s ease;
+}
+
+.tutorial-tab.active {
+    display: flex;
+}
+
+.tutorial-tab h3 {
+    color: #003366;
+    margin-top: 0;
+    font-size: 1.5em; /* Aumenta el tamaño del título */
+}
+
+.tutorial-tab video {
+    max-width: 100%;
+    height: auto;
+}
+
+#tab4 button {
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#tab4 button:hover {
+    background-color: #00406e;
+}
+
+#tab1, #tab4 {
+    justify-content: center;
+}
+
+#tab4 label {
+    margin-bottom: 20px;
+}
+
+#tab4 button {
+    margin-top: 20px;
+    align-items: center;
+}
+
+
+@media screen and (max-width: 768px) {
+    header {
+        padding: 5px 10px;
+    }
+
+    .header-content {
+        margin: 10px 0;
+    }
+
+    #logo, #mensaje {
+        height: 50px; /* Reduce el tamaño para pantallas más pequeñas */
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    .career-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav button {
+        margin: 5px auto;
+        width: calc(100% - 20px); /* 10px de margen a cada lado */
+    }
+
+    #btn-gestion-tecnologica {
+        margin-left: auto;
+        width: calc(100% - 20px);
+    }
+
+    #btn-contador-publico {
+        margin-left: auto;
+        width: calc(100% - 20px);
+    }
+
+    #btn-administracion {
+        margin-left: auto;
+        width: calc(100% - 20px);
+    }
+
+    #btn-economia-empresarial {
+        margin-left: auto;
+        width: calc(100% - 20px);
+    }
+
+    .year-section, .mix-section {
+        max-width: 100%;
+    }
+
+    .tutorial-content {
+        width: 90%;
+        height: auto;
+        max-height: 90vh;
+    }
+
+    .nav-button {
+        top: auto;
+        z-index: 1;
+        transform: none;
+    }
+
+
+    #btn-save {
+        width: calc(100% - 20px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    nav button {
+        width: 100%;
+        z-index: 1;
+    }
+
+    .tutorial-content {
+        width: 95%;
+    }
+
+    .tutorial-tab h3 {
+        font-size: 1.2em;
+    }
+
+    .tutorial-tab p {
+        font-size: 0.9em;
+    }
+}
+#faqModal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .faq-item {
+    margin-bottom: 10px;
+  }
+  
+  .faq-question {
+    background-color: #f1f1f1;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .faq-answer {
+    display: none;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+  }
+
+.links-modal-content {
+  max-width: 600px;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+
+.tab-button {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+.tab-button:hover {
+  background-color: #ddd;
+}
+
+.tab-button.active {
+  background-color: #ccc;
+}
+
+.tab-content {
+  display: none;
+  padding: 20px;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.link-item {
+  margin-bottom: 15px;
+}
+
+.link-item a {
+  font-size: 18px;
+  color: #003366;
+  text-decoration: none;
+}
+
+.link-item p {
+  margin: 5px 0 0 0;
+  font-size: 14px;
+  color: #666;
+}  
+
+.links-modal-content {
+    max-width: 600px;
+  }
+  
+  .tabs {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .tab-button {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+  
+  .tab-button:hover {
+    background-color: #ddd;
+  }
+  
+  .tab-button.active {
+    background-color: #ccc;
+  }
+  
+  .tab-content {
+    display: none;
+    padding: 20px;
+  }
+  
+  .tab-content.active {
+    display: block;
+  }
+  
+  .link-item {
+    margin-bottom: 15px;
+  }
+  
+  .link-item a {
+    font-size: 18px;
+    color: #003366;
+    text-decoration: none;
+  }
+  
+  .link-item p {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+    color: #666;
+  }
+  
+
+
+/* Dispositivos muy pequeños */
+@media screen and (max-width: 1500px) {
+    .nav-button {
+        width: 50px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    #prevButton {
+        left: 25%;
+    }
+
+    #nextButton {
+        right: 25%;
+    }
+}  
+
+@media screen and (max-width: 1400px) {
+    .nav-button {
+        width: 50px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    #prevButton {
+        left: 20%;
+    }
+
+    #nextButton {
+        right: 20%;
+    }
+}  
+
+@media screen and (max-width: 1300px) {
+    .nav-button {
+        width: 50px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    #prevButton {
+        left: 18%;
+    }
+
+    #nextButton {
+        right: 18%;
+    }
+}  
+
+@media screen and (max-width: 1200px) {
+    .nav-button {
+        width: 50px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    #prevButton {
+        left: 15%;
+    }
+
+    #nextButton {
+        right: 15%;
+    }
+}  
+
+@media screen and (max-width: 1100px) {
+    .nav-button {
+        width: 50px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    #prevButton {
+        left: 12%;
+    }
+
+    #nextButton {
+        right: 12%;
+    }
+}  
+
+@media screen and (max-width: 900px) {
+    .nav-button {
+        width: 50px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    #prevButton {
+        left: 8%;
+    }
+
+    #nextButton {
+        right: 8%;
+    }
+} 
+
+@media screen and (max-width: 700px) {
+    .nav-button {
+        width: 50px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    #prevButton {
+        left: 3%;
+    }
+
+    #nextButton {
+        right: 3%;
+    }
+} 
+
+
+
+.derechos{
+    bottom: 5px;
+    text-align: center;
+    color: #c2c3c2;
+}
