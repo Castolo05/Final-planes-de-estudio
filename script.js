@@ -95,7 +95,7 @@ function loadCareer(careerName) {
 
 // Llama a loadCareerData antes de cargar cualquier carrera
 loadCareerData().then(() => {
-    const lastCareer = localStorage.getItem('lastCareer') || 'gestion-tecnologica';
+    const lastCareer = localStorage.getItem('lastCareer') || 'CA005';
     loadCareer(lastCareer);
 });
     loadSavedState();

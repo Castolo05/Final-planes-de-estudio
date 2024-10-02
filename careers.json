@@ -1,5 +1,5 @@
 {
-    "gestion-tecnologica": [
+    "CA005": [ 
       { "id": "L0000", "name": "Introducción a las Ciencias Económicas", "correlatives": [], "year": 1, "mix": "I" },
       { "id": "L0001", "name": "Contabilidad Básica", "correlatives": ["L0000"], "year": 1, "mix": "A" },
       { "id": "L0002", "name": "Matemática I", "correlatives": ["L0000"], "year": 1, "mix": "A" },
@@ -43,7 +43,7 @@
       { "id": "LT011", "name": "Taller de Trabajo Final de Graduación", "correlatives": ["all"], "year": 4, "mix": "T" },
       { "id": "LT008", "name": "Espacio de Práctica Profesional Supervisada", "correlatives": ["L0004", "L0019", "LT003"], "year": 4, "mix": "P" }
     ],
-    "economia-empresarial": [
+    "CA004": [
       { "id": "L0000", "name": "Introducción a las Ciencias Económicas", "correlatives": [], "year": 1, "mix": "I" },
       { "id": "L0001", "name": "Contabilidad Básica", "correlatives": ["L0000"], "year": 1, "mix": "A" },
       { "id": "L0002", "name": "Matemática I", "correlatives": ["L0000"], "year": 1, "mix": "A" },
@@ -87,7 +87,7 @@
       { "id": "LT007", "name": "Taller de Práctica de Sistemas Contables", "correlatives": ["L0001"], "year": 3, "mix": "T" },
       { "id": "LT008", "name": "Espacio de Práctica Profesional Supervisada", "correlatives": ["L0004", "L0019", "LT003"], "year": 4, "mix": "P" }
     ],
-    "contador-publico": [
+    "CA001": [
     { "id": "L0000", "name": "Introducción a las Ciencias Económicas", "correlatives": [], "year": 1, "mix": "I" },
     { "id": "L0001", "name": "Contabilidad Básica", "correlatives": ["L0000"], "year": 1, "mix": "A" },
     { "id": "L0002", "name": "Matemática I", "correlatives": ["L0000"], "year": 1, "mix": "A" },
@@ -132,7 +132,7 @@
     { "id": "LT008", "name": "Espacio de Práctica Profesional Supervisada", "correlatives": ["L0004", "L1001", "LT003"], "year": 4, "mix": "P" },
     { "id": "LT006", "name": "Taller de Idioma – Preparación Examen Internacional (Opcional)", "correlatives": ["LT005"], "year": 3, "mix": "T" }
   ],
-  "administracion": [
+  "CA002": [
     { "id": "L0000", "name": "Introducción a las Ciencias Económicas", "correlatives": [], "year": 1, "mix": "I" },
     { "id": "L0001", "name": "Contabilidad Básica", "correlatives": ["L0000"], "year": 1, "mix": "A" },
     { "id": "L0002", "name": "Matemática I", "correlatives": ["L0000"], "year": 1, "mix": "A" },

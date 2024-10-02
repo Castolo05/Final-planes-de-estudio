@@ -1,0 +1,4 @@
+Contador Público	                      CA001
+Licenciatura en Administración	          CA002
+Licenciatura en Economía Empresarial      CA004
+Licenciatura en Gestión Tecnológica       CA005
